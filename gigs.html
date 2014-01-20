@@ -1,0 +1,151 @@
+<?php
+include("scripts/dbConnect.php");
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" ><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="chrome=1,IE=9" />
+		<meta name="viewport" content="user-scalable=yes, width=940" />
+		<meta name="description" content="Semperfi is an Aberdeen based rock/metal/metalcore outfit. A powerful band, technically brilliant and with a great live show" />
+		<meta name="keywords" content="Aberdeen, Metal, Scotland, UK, United Kingdom, Metalcore, Rock, Band, Gary Addison, Liam Watt, Gavin Allan, James Gibb, semperfi, semper-fi" />
+		<meta name="author" content="webeast.co" />
+		<title>Semperfi - Official Website</title>
+		<link rel="stylesheet" type="text/css" href="body.css" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+
+<script type="text/javascript" src="scripts/jquery.pngFix.js"></script> 
+<script type="text/javascript"> 
+    $(document).ready(function(){ 
+        $(document).pngFix(); 
+    }); 
+</script> 
+
+<script type="text/javascript">
+$(document).ready(function() {
+
+function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+    });
+    return vars;
+}
+
+var visited = getUrlVars()["x"];
+
+if (visited == 1){
+
+$("#header_hype_container").replaceWith( "<div class='header-replace'>" );
+
+}
+
+});
+</script>
+
+</head>
+	<body>
+	
+<div class="container">
+<div class="shell">
+
+	<div id="header_hype_container" style="position:absolute;top:-220px;overflow:visible;z-index:0;overflow:hidden;width:787px;height:482px;margin-left:56px;">
+		<script type="text/javascript" charset="utf-8" src="header_Resources/header_hype_generated_script.js?45289"></script>
+	</div>
+
+<div class="menu-container">
+	<div id="centeredmenu">
+	<ul>
+		<li><a href="index.html?x=1" id="index">HOME</a></li>
+		<li><a href="bio.html?x=1" id="bio">BIO</a></li>
+		<li><a href="gigs.html?x=1" id="gigs" class="active">GIGS</a></li>
+		<li><a href="disco.html?x=1" id="media">MEDIA</a></li>
+		<li><a href="http://semperfi.bigcartel.com/" id="merch" target="_blank">MERCH</a></li>
+		<li><a href="contact.html?x=1" id="contact" style="border-right:0;">CONTACT</a></li>
+	</ul>
+	</div>
+</div>
+
+<div class="edge-top"></div>
+
+<div class="edge-right">
+	<div class="edge-left">
+		<div class="content-container">
+			<div class="content">
+
+<!-- Content -->
+
+<div class="inner" style="width:700px;margin:0px 40px;">
+	<div class="header">
+		<img src="images/header-div.png" style="float: left; width:260px;" class="header-lines">
+		<img src="images/header-div.png" style="float: right; width:260px;" class="header-lines">
+		<h1>GIGS</h1>
+	</div>
+	<?php
+
+	/* fetch gigs from database */
+	$queryGig = "SELECT * FROM gigs ORDER BY gigDate ASC"; 
+	$resultGig = mysql_query($queryGig) or die(mysql_error());
+
+	while($rowGig = mysql_fetch_array($resultGig)){	
+	
+	$oDate = strtotime($rowGig['gigDate']);
+	$gigDate = date("d/m/y",$oDate);
+	
+		echo '<ul style="margin:0px auto;">';
+		echo '<li><img src="images/body-div.png" class="body-div" style="margin:15px auto;"></li>';
+		echo '<li><span class="map"><a href="http://maps.google.co.uk/maps?q=' . $rowGig['venue'] . '+' . $rowGig['address'] . '"  target="_blank" ><img src="http://maps.google.com/maps/api/staticmap?markers=size:mid|' . $rowGig['venue'] . '+' . $rowGig['address'] . '&size=300x200&sensor=false"></a></span></li>';
+		echo '<li><span class="date"><h2>' . $gigDate . '</h2><br><h3>DOORS ' . $rowGig['gigTime'] . '</h3><br><h3>&pound;' . $rowGig['ticketPrice'] . ' / &pound;' . $rowGig['doorPrice'] . ' DOOR</h3></span></li>';
+		echo '<li><h2>' . $rowGig['city'] . '</h2></li>';
+		echo '<li><h3>' . $rowGig['venue'] . '</h3></li>';
+		echo '<li style="margin-bottom:10px;"><h3><a href="' . $rowGig['fbLink'] . '"  target="_blank" >Facebook Event</a></h3></li>';
+		echo '<li><p>' . $rowGig['description'] . '</p></li>';
+		echo '</ul>';
+	}
+
+	?>
+	<ul style="margin:0px auto;">	
+		<li><img src="images/body-div.png" class="body-div" style="margin:15px auto;"></li>
+	</ul>
+	<ul class="pages" style="margin-top:40px;">
+		<li><img src="images/body-div.png" class="body-div" style="margin:15px auto;"></li>
+		<li><a href="contact.html?x=1">CONTACT THE BAND</a></li>
+		<li><img src="images/body-div.png" class="body-div" style="margin:15px auto;"></li>
+	</ul>
+
+</div>
+
+<!-- /Content -->
+
+			</div>
+		</div>
+	</div>
+</div>
+	
+<div class="edge-bottom"></div>
+
+<div class="footer">
+	<ul class="footer-menu">
+		<li><a href="index.html?x=1" style="padding-left:0px;" id="index">HOME</a></li>
+		<li><a href="bio.html?x=1" id="bio">BIO</a></li>
+		<li><a href="gigs.html?x=1" id="gigs">GIGS</a></li>
+		<li><a href="disco.html?x=1" id="media">MEDIA</a></li>
+		<li><a href="http://semperfi.bigcartel.com/" id="merch" target="_blank">MERCH</a></li>
+		<li><a href="contact.html?x=1" style="background-image: none;padding-right:0px;" id="contact">CONTACT</a></li>
+	</ul>
+	<ul class="submenu">
+		<li><a href="http://www.facebook.com/semperfiofficial">FACEBOOK | </a></li>
+		<li><a href="http://www.twitter.com/semperfimetal">TWITTER | </a></li>
+		<li><a href="http://www.youtube.com/user/semperfiofficial">YOUTUBE | </a></li>
+		<li>&nbsp;&nbsp;&nbsp;COPYRIGHT &copy; 2012</li>
+	</ul>
+	<div style="height:30px;width:100%;"></div>
+</div>
+
+</div>
+</div>
+
+
+	</body>
+</html>

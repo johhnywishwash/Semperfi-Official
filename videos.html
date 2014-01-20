@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" ><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="chrome=1,IE=9" />
+		<meta name="viewport" content="user-scalable=yes, width=940" />
+		<meta name="description" content="Semperfi is an Aberdeen based rock/metal/metalcore outfit. A powerful band, technically brilliant and with a great live show" />
+		<meta name="keywords" content="Aberdeen, Metal, Scotland, UK, United Kingdom, Metalcore, Rock, Band, Gary Addison, Liam Watt, Gavin Allan, James Gibb, semperfi, semper-fi" />
+		<meta name="author" content="webeast.co" />
+		<title>Semperfi - Official Website</title>
+		<link rel="stylesheet" type="text/css" href="body.css" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+
+<script type="text/javascript" src="scripts/jquery.pngFix.js"></script> 
+<script type="text/javascript"> 
+    $(document).ready(function(){ 
+        $(document).pngFix(); 
+    }); 
+</script> 
+
+<script type="text/javascript">
+$(document).ready(function() {
+
+function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+    });
+    return vars;
+}
+
+var visited = getUrlVars()["x"];
+
+if (visited == 1){
+
+$("#header_hype_container").replaceWith( "<div class='header-replace'>" );
+
+}
+});
+</script>
+
+</head>
+	<body>
+	
+<div class="container">
+<div class="shell">
+
+	<div id="header_hype_container" style="position:absolute;top:-220px;overflow:visible;z-index:0;overflow:hidden;width:787px;height:482px;margin-left:56px;">
+		<script type="text/javascript" charset="utf-8" src="header_Resources/header_hype_generated_script.js?45289"></script>
+	</div>
+
+<div class="menu-container">
+	<div id="centeredmenu">
+	<ul>
+		<li><a href="index.html?x=1" id="index">HOME</a></li>
+		<li><a href="bio.html?x=1" id="bio">BIO</a></li>
+		<li><a href="gigs.html?x=1" id="gigs">GIGS</a></li>
+		<li><a href="disco.html?x=1" id="media" class="active">MEDIA</a></li>
+		<li><a href="http://semperfi.bigcartel.com/" id="merch" target="_blank">MERCH</a></li>
+		<li><a href="contact.html?x=1" id="contact" style="border-right:0;">CONTACT</a></li>
+	</ul>
+	</div>
+</div>
+
+<div class="edge-top"></div>
+
+<div class="edge-right">
+	<div class="edge-left">
+		<div class="content-container">
+			<div class="content">
+
+<!-- Content-->
+
+<div class="inner" style="width:700px;">
+	<ul class="pages" style="margin-top:0px;">
+		<li><a href="disco.html?x=1">DISCOGRAPHY</a>&nbsp;&nbsp;&nbsp;&nbsp;|</li>
+		<li><a href="videos.html?x=1" style="color:#FFF;text-decoration:underline;">VIDEOS</a>&nbsp;&nbsp;&nbsp;&nbsp;|</li>			
+		<li><a href="photos.html?x=1">PHOTOS</a>&nbsp;&nbsp;&nbsp;&nbsp;|</li>
+		<li><a href="downloads.html?x=1" style="background-image: none;padding-right:0px;">DOWNLOADS</a></li>
+		<li><img src="images/body-div.png" class="body-div" style="margin:15px auto;"></li>
+	</ul>
+	
+<?php
+require_once('scripts/youtube.php');
+
+$youtube = new ChannelFeed('SemperfiOfficial');
+$vids = $youtube->showFullFeed();
+$vidIDs = array_map("getYouTubeID",$vids);
+
+$i = 0;
+ 
+foreach ($vidIDs as $vidID){
+	
+	echo '<script type="text/javascript">';
+	echo '$(document).ready(function() {';
+	echo '$("#youtubeThumb'.$i.'").click(function () {';
+	echo 'var val = $(this).attr("name");';
+	echo 'var titleVar = $(this).attr("title");';
+	echo 'var descVar = $(this).attr("alt");';
+	echo '$("#youtubePlayer").attr("src", val);';
+	echo '$("#vidTitle").html(titleVar);';
+	echo '$("#vidDesc").html(descVar);';
+	echo '});';
+	echo '});';
+	echo '</script>';
+	
+	$url = "http://gdata.youtube.com/feeds/api/videos/". $vidID;
+    $doc = new DOMDocument;
+    $doc->load($url);
+    $title = $doc->getElementsByTagName("title")->item(0)->nodeValue;
+	$description = $doc->getElementsByTagName("description")->item(0)->nodeValue;
+
+if ($i==0){
+
+echo '<ul class="video">';
+echo '<li><iframe id ="youtubePlayer" name="youtubePlayer" class="youtube-player" type="text/html" width="640" height="385" src="http://www.youtube.com/embed/' . $vidID . '" frameborder="0"></iframe></li>';
+echo '<li><p id="vidDesc">' . $description . '</p></li>';
+
+echo '<li><img src="images/body-div.png" class="body-div" style="margin:15px auto;"></li>';
+echo '</ul>';
+
+echo '<ul class="videos">';
+echo '<li><img src="http://img.youtube.com/vi/' . $vidID . '/default.jpg" id="youtubeThumb'.$i.'" name="http://www.youtube.com/embed/' . $vidID . '" alt="' . $description . '" title="' . $title . '"/><span><h3>' . $title . '</h3><span></li>';
+
+} else{
+
+echo '<li><img src="http://img.youtube.com/vi/' . $vidID . '/default.jpg" id="youtubeThumb'.$i.'" name="http://www.youtube.com/embed/' . $vidID . '" alt="' . $description . '" title="' . $title . '"/><span><h3>' . $title . '</h3><span></li>';
+
+	}
+	
+$i++;
+	
+}
+
+echo '</ul>';
+
+?>
+
+</ul>
+	<ul class="pages" style="margin-top:40px;">
+		<li><img src="images/body-div.png" class="body-div" style="margin:15px auto;"></li>
+		<li><a href="http://www.youtube.com/user/SemperfiOfficial" target="_blank">GO TO YOUTUBE CHANNEL</a></li>
+	</ul>
+</div>
+
+<!-- /Content -->
+
+			</div>
+		</div>
+	</div>
+</div>
+	
+<div class="edge-bottom"></div>
+
+<div class="footer">
+	<ul class="footer-menu">
+		<li><a href="index.html?x=1" style="padding-left:0px;" id="index">HOME</a></li>
+		<li><a href="bio.html?x=1" id="bio">BIO</a></li>
+		<li><a href="gigs.html?x=1" id="gigs">GIGS</a></li>
+		<li><a href="disco.html?x=1" id="media">MEDIA</a></li>
+		<li><a href="http://semperfi.bigcartel.com/" id="merch" target="_blank">MERCH</a></li>
+		<li><a href="contact.html?x=1" style="background-image: none;padding-right:0px;" id="contact">CONTACT</a></li>
+	</ul>
+	<ul class="submenu">
+		<li><a href="http://www.facebook.com/semperfiofficial">FACEBOOK | </a></li>
+		<li><a href="http://www.twitter.com/semperfimetal">TWITTER | </a></li>
+		<li><a href="http://www.youtube.com/user/semperfiofficial">YOUTUBE | </a></li>
+		<li>&nbsp;&nbsp;&nbsp;COPYRIGHT &copy; 2012</li>
+	</ul>
+	<div style="height:30px;width:100%;"></div>
+</div>
+
+</div>
+</div>
+
+
+	</body>
+</html>

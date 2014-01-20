@@ -1,0 +1,55 @@
+/* ADMIN */
+
+div.admin-container {
+	width:500px;
+	margin:0px auto;
+	position:relative;
+}
+
+ul.admin {
+	margin-left:60px;
+	margin-bottom:60px;
+	width:500px;
+	font-size:12px;
+}
+
+ul.admin h2 {
+	font-size:24px;
+}
+
+ul.admin li {
+	margin: 0px auto;
+	padding:10px 0px;
+	width:350px;
+	text-align:left;
+}
+
+ul.admin textarea,ul.admin input,ul.admin form,#dateInputEdit0,#timeInputEdit0{
+	display:inline;
+	vertical-align:top;
+	padding:0px;
+	margin:0px;
+}
+
+ul.admin input {
+	overflow:visible;
+}
+
+ul.admin label {
+	margin-right:10px;
+	position:absolute;
+	left:0px;
+	text-align:right;
+	width:120px;
+	font-weight:bold;
+}
+
+li.buttons input {
+	margin-right:5px;
+}
+
+/* ADMIN END */
+
+
+
+

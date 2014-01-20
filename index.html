@@ -1,0 +1,214 @@
+<?php
+include("scripts/dbConnect.php");
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" ><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="chrome=1,IE=9" />
+		<meta name="viewport" content="user-scalable=yes, width=940" />
+		<meta name="description" content="Semperfi is an Aberdeen based rock/metal/metalcore outfit. A powerful band, technically brilliant and with a great live show" />
+		<meta name="keywords" content="Aberdeen, Metal, Scotland, UK, United Kingdom, Metalcore, Rock, Band, Gary Addison, Liam Watt, Gavin Allan, James Gibb, semperfi, semper-fi" />
+		<meta name="author" content="webeast.co" />
+		<title>Semperfi - Official Website</title>
+		<link rel="stylesheet" type="text/css" href="body.css" />
+		<link rel="stylesheet" type="text/css" href="css/mp3-player-button.css" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+
+<script type="text/javascript" src="scripts/jquery.pngFix.js"></script> 
+<script type="text/javascript"> 
+    $(document).ready(function(){ 
+        $(document).pngFix(); 
+    }); 
+</script> 
+
+<script type="text/javascript" src="scripts/soundmanager2.js"></script>
+<script type="text/javascript" src="scripts/mp3-player-button.js"></script>
+<script>soundManager.url = 'scripts/swf/'; // required: path to directory containing SM2 SWF files</script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+
+function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+    });
+    return vars;
+}
+
+var visited = getUrlVars()["x"];
+
+if (visited == 1){
+
+$("#header_hype_container").replaceWith( "<div class='header-replace'>" );
+
+}
+
+});
+</script>
+
+</head>
+	<body>
+
+	
+<div class="container">
+<div class="shell">
+
+	<div id="header_hype_container" style="position:absolute;top:-200px;overflow:visible;z-index:0;overflow:hidden;width:787px;height:482px;margin-left:56px;">
+		<script type="text/javascript" charset="utf-8" src="header_Resources/header_hype_generated_script.js?45289"></script>
+	</div>
+
+<div class="menu-container">
+	<div id="centeredmenu">
+	<ul>
+		<li><a href="index.html?x=1" id="index" class="active">HOME</a></li>
+		<li><a href="bio.html?x=1" id="bio">BIO</a></li>
+		<li><a href="gigs.html?x=1" id="gigs">GIGS</a></li>
+		<li><a href="disco.html?x=1" id="media">MEDIA</a></li>
+		<li><a href="http://semperfi.bigcartel.com/" id="merch" target="_blank">MERCH</a></li>
+		<li><a href="contact.html?x=1" id="contact" style="border-right:0;">CONTACT</a></li>
+	</ul>
+	</div>
+</div>
+
+<div class="edge-top"></div>
+
+<div class="edge-right">
+	<div class="edge-left">
+		<div class="content-container">
+			<div class="content">
+
+<!-- Content -->
+<!-- News Feed -->
+
+<div class="inner" style="width:430px;min-height:2000px;">
+	<div class="header">
+		<img src="images/header-div.png" style="float: left;" class="header-lines">
+		<img src="images/header-div.png" style="float: right;" class="header-lines">
+		<h1>NEWS FEED</h1><br><h3>FROM <a href="http://www.facebook.com/Semperfiofficial" target="_blank">FACEBOOK</a> & <a href="http://www.twitter.com/semperfimetal" target="_blank">TWITTER</a></h3>
+	</div>
+	
+	<?php include("scripts/facebook.php"); ?>
+
+	<ul class="pages">
+		<li><a href="http://facebook.com/Semperfiofficial" target="_blank">OLDER POSTS</a><br><br>
+		<a href="http://facebook.com/Semperfiofficial" target="_blank"><img src="images/facebook.png" id="facebook"><h3>FACEBOOK</h3></a><a href="http://twitter.com/semperfimetal" target="_blank"><img src="images/twitter.png" id="twitter"><h3>TWITTER</h3></a></li>
+	</ul>
+</div>
+
+<!-- /News Feed -->
+
+<!-- Sidebar -->
+<div class="sidebar-position">
+<div class="sidebar-spatter">
+	<div class="sidebar-container">
+		<div class="sidebar">
+		<ul style="text-align:center;overflow:visible;width:252px;">
+			<li><img src="images/inside-med.png" style="margin-top:30px;"></li>
+			<li style="margin:-10px auto 0px;"><h1 style="font-size:2.8em;line-height:35px;">NEW<br>ALBUM</h1></li>
+			<li><h1 style="color:#111; text-shadow: 1px 2px 3px #433e3a;">INSIDE</h1></li>
+			<li><h2>OUT NOW!</h2></li>
+			<li><h3>AVAILABLE FROM</h3></li>
+			<li>
+				<ul class="sellers">
+					<li><a class="item1" href="http://itunes.apple.com/gb/album/inside/id518346268?uo=4" target="itunes_store">Inside</a></li>
+					<li><a class="item4" href="http://www.amazon.co.uk/dp/B007UGGU1K" target="_blank">Amazon</a></li>
+					<li><a class="item5" href="#">Spotify</a></li>
+				</ul>
+			</li>
+			<li>
+				<div class="sidebar-block">
+					<a href="music/04-This-Ain't-Over.zip">
+					<h1 style="font-size:1.8em;">FREE TRACK</h1><br/>
+					<h2>'THIS AIN'T OVER'</h2><br/>
+					<p style="color:#58514c;font-size:0.7em;text-align:center;">(CLICK TO DOWNLOAD)<br/></p>
+					</a>
+				</div>	
+			</li>
+			<li><img src="images/sidebar-div.png" class="sidebar-div"></li>
+			<li style="margin-top:20px;"><img src="images/sidebar-live.png"><br></li>
+		</ul>
+		
+		<ul class="mini-gigs">
+			<li style="text-align:center;border-bottom:0px;margin-top:-30px;">
+			<h1 style="font-size: 1.5em;">UPCOMING GIGS</h1></li>
+			<?php
+
+			/* fetch gigs from database */
+			$gigDay = date("d");
+			$gigMonth = date("m");
+			$gigYear = date("y");
+			$todaysDate = "20".$gigYear."-".$gigMonth."-".$gigDay;
+			
+			$queryGig = "SELECT * FROM gigs WHERE gigDate >= '".$todaysDate."' ORDER BY gigDate ASC"; 
+			$resultGig = mysql_query($queryGig) or die(mysql_error());
+
+			while($rowGig = mysql_fetch_array($resultGig)){
+			
+			$oDate = strtotime($rowGig['gigDate']);
+			$gigDate = date("d/m/y",$oDate);
+			
+			echo '<li><a href="gigs.html?x=1"><span>' . $gigDate . '</span>' . $rowGig['venue'] . '</a></li>';
+			}
+			?>
+			<li style="text-align:center;border-bottom:0px;"><a href="gigs.html?x=1">VIEW ALL GIGS</a></li>
+			<li style="border-bottom:0px;"><img src="images/sidebar-div.png" class="sidebar-div"></li>
+		</ul>
+		<ul style="text-align:center;overflow:visible;width:252px;">
+			<li style="margin:-35px auto; margin-top:0px;"><h1 style="font-size:3.5em;">FREE</h1></li>
+			<li><a class="item2" href="http://semperfi.bandcamp.com/album/the-abyss" target="_blank"><h1>DOWNLOAD</h1></a></li>
+			<li><h2>'THE ABYSS' EP</h2></li>
+			<li><h3>AVAILABLE ON</h3></li>
+			<li>
+				<ul class="sellers">
+					<li><a class="item2" href="http://semperfi.bandcamp.com/album/the-abyss" target="_blank">Bandcamp</a></li>
+				</ul>
+			</li>
+			<li>
+			<iframe width="150" height="450" style="position: relative; display: block; width: 150px; height: 450px; margin:0px auto;" src="http://bandcamp.com/EmbeddedPlayer/v=2/album=2936680704/size=tall2/bgcol=000000/linkcol=ffffff/transparent=true/" allowtransparency="true" frameborder="0"><a href="http://semperfi.bandcamp.com/album/the-abyss">The Abyss by Semperfi</a></iframe>
+			</li>
+			<li><img src="images/sidebar-div.png" class="sidebar-div"></li>
+		</ul>
+		</div>
+		<div class="sidebar-bottom"></div>
+	</div>
+</div>
+</div>
+
+<!-- /Sidebar -->
+
+<!-- /Content -->
+
+			</div>
+		</div>
+	</div>
+</div>
+	
+<div class="edge-bottom"></div>
+
+<div class="footer">
+	<ul class="footer-menu">
+		<li><a href="index.html?x=1" style="padding-left:0px;" id="index">HOME</a></li>
+		<li><a href="bio.html?x=1" id="bio">BIO</a></li>
+		<li><a href="gigs.html?x=1" id="gigs">GIGS</a></li>
+		<li><a href="disco.html?x=1" id="media">MEDIA</a></li>
+		<li><a href="http://semperfi.bigcartel.com/" id="merch" target="_blank">MERCH</a></li>
+		<li><a href="contact.html?x=1" style="background-image: none;padding-right:0px;" id="contact">CONTACT</a></li>
+	</ul>
+	<ul class="submenu">
+		<li><a href="http://www.facebook.com/semperfiofficial">FACEBOOK | </a></li>
+		<li><a href="http://www.twitter.com/semperfimetal">TWITTER | </a></li>
+		<li><a href="http://www.youtube.com/user/semperfiofficial">YOUTUBE | </a></li>
+		<li>&nbsp;&nbsp;&nbsp;COPYRIGHT &copy; 2012</li>
+	</ul>
+	<div style="height:30px;width:100%;"></div>
+</div>
+
+</div>
+</div>
+
+
+	</body>
+</html>
